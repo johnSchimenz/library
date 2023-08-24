@@ -1,6 +1,7 @@
+// Global variables
 const myLibrary = [];
-const library = document.querySelector("#library");
 
+// Book constructor
 function Book(author, title, pages, read) {
     this.author = author;
     this.title = title;
@@ -8,10 +9,12 @@ function Book(author, title, pages, read) {
     this.read = read;
 }
 
+// Adds book to library
 function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// Current list of books added to library
 const book1 = new Book("Smith, Joe", "I Like Apples", 52, false);
 const book2 = new Book("Terry, Phil", "Peanut Butter Jelly Time", 93, false);
 const book3 = new Book("Zendaya, Betty", "Spiderman Is Awesome", 37, false);
@@ -19,6 +22,9 @@ const book3 = new Book("Zendaya, Betty", "Spiderman Is Awesome", 37, false);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
+
+// Displays the books added to the library
+const library = document.querySelector("#library");
 
 for (let i = 0; i < myLibrary.length; i++)
 {
