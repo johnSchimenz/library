@@ -48,6 +48,8 @@ openAddNewBookModal.addEventListener("click", () => {
     interactWithAddNewBookModal.showModal();
 })
 
-submitNewBook.addEventListener("click", () => {
+submitNewBook.addEventListener("click", (event) => {
+    event.preventDefault();
     interactWithAddNewBookModal.close();
 })
+
