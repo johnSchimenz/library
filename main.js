@@ -38,4 +38,16 @@ for (let i = 0; i < myLibrary.length; i++)
     library.appendChild(displayBookInfo);
 }
 
-/* for (let i = 0; i < myLibrary.length) */
+// Makes buttons work for adding new book
+
+const openAddNewBookModal = document.querySelector("#add-new-book");
+const interactWithAddNewBookModal = document.querySelector("#modal");
+const submitNewBook = document.querySelector("#submit");
+
+openAddNewBookModal.addEventListener("click", () => {
+    interactWithAddNewBookModal.showModal();
+})
+
+submitNewBook.addEventListener("click", () => {
+    interactWithAddNewBookModal.close();
+})
