@@ -73,4 +73,3 @@ submitNewBook.addEventListener("click", (event) => {
 
     interactWithAddNewBookModal.close();
 })
-
