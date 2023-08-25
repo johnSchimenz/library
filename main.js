@@ -27,19 +27,21 @@ addBookToLibrary(book3);
 // Displays the books added to the library
 const library = document.querySelector("#library");
 
-for (let i = 0; i < myLibrary.length; i++)
-{
-    const displayBookInfo = document.createElement("div");
-    displayBookInfo.textContent = myLibrary[i].authorLastName 
-        + ", "
-        + myLibrary[i].authorFirstName
-        + " - "
-        + myLibrary[i].title 
-        + " - " 
-        + myLibrary[i].pages
-        + " - "
-        + myLibrary[i].read;
-    library.appendChild(displayBookInfo);
+function updateLibrary() {
+    for (let i = 0; i < myLibrary.length; i++)
+    {
+        const displayBookInfo = document.createElement("div");
+        displayBookInfo.textContent = myLibrary[i].authorLastName 
+            + ", "
+            + myLibrary[i].authorFirstName
+            + " - "
+            + myLibrary[i].title 
+            + " - " 
+            + myLibrary[i].pages
+            + " - "
+            + myLibrary[i].read;
+        library.appendChild(displayBookInfo);
+    }
 }
 
 
@@ -70,6 +72,7 @@ submitNewBook.addEventListener("click", (event) => {
 
     const newBook = new Book(newLastName, newFirstName, newTitle, newPages, newRead);
     addBookToLibrary(newBook);
+    updateLibrary(newBook);
 
     interactWithAddNewBookModal.close();
 })
