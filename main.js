@@ -42,6 +42,7 @@ for (let i = 0; i < myLibrary.length; i++)
     library.appendChild(displayBookInfo);
 }
 
+
 // Makes buttons work for adding new book
 const openAddNewBookModal = document.querySelector("#add-new-book");
 const interactWithAddNewBookModal = document.querySelector("#modal");
@@ -69,8 +70,6 @@ submitNewBook.addEventListener("click", (event) => {
 
     const newBook = new Book(newLastName, newFirstName, newTitle, newPages, newRead);
     addBookToLibrary(newBook);
-
-    
 
     interactWithAddNewBookModal.close();
 })
