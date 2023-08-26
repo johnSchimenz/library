@@ -41,7 +41,6 @@ function updateLibrary(book) {
     library.appendChild(displayBookInfo);
 }
 
-
 // Makes buttons work for adding new book
 const openAddNewBookModal = document.querySelector("#add-new-book");
 const interactWithAddNewBookModal = document.querySelector("#modal");
@@ -67,7 +66,7 @@ submitNewBook.addEventListener("click", (event) => {
     const newPages = getPages.value;
     const newRead = getRead.value;
 
-    const newBook = new Book(newLastName, newFirstName, newTitle, newPages, newRead);
+    const newBook = new Book(newFirstName, newLastName, newTitle, newPages, newRead);
     addBookToLibrary(newBook);
     updateLibrary(newBook);
 
