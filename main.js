@@ -15,7 +15,7 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-// Displays the books added to the library
+// Displays the books added to the library and the delete button that goes with the book
 const library = document.querySelector("#library");
 
 function updateLibrary(book) {
@@ -32,7 +32,8 @@ function updateLibrary(book) {
 
     const addDeleteButton = document.createElement("button");
     addDeleteButton.setAttribute("id", "idDeleteButton" + counter);
-    addDeleteButton.textContent = "Delete";
+    addDeleteButton.setAttribute("class", "delete");
+    addDeleteButton.textContent = "DELETE";
     library.appendChild(addDeleteButton);
 
     counter++;
@@ -55,7 +56,6 @@ submitNewBook.addEventListener("click", (event) => {
     const getTitle = document.querySelector("#title");
     const getPages = document.querySelector("#pages");
 
-    
     const newLastName = getLastName.value;
     const newFirstName = getFirstName.value;
     const newTitle = getTitle.value;
@@ -79,3 +79,13 @@ const closeAddNewBookModal = document.querySelector("#cancel")
 closeAddNewBookModal.addEventListener("click", () => {
     interactWithAddNewBookModal.close();
 })
+
+// Makes "DELETE" button work (see VIDEO https://youtu.be/vkqZC_rEkVA?si=Qz6_gk7e4w9SE6gR&t=419 for help)
+const libraryBooksList = document.querySelector("#library"); // Selects the entire library div
+function deleteBook(event) {
+    const btn = event.target;
+    btn.closest("")
+}
+
+
+libraryBooksList.addEventListener("click", deleteBook)
