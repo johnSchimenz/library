@@ -1,5 +1,6 @@
 // Global variables
 const myLibrary = [];
+let counter = 0;
 
 // Book constructor
 function Book(authorFirstName, authorLastName, title, pages) {
@@ -14,20 +15,12 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-// Current list of books added to library
-const book1 = new Book("Joe", "Smith", "I Like Apples", 52, false);
-const book2 = new Book("Phil", "Terry", "Peanut Butter Jelly Time", 93, false);
-const book3 = new Book("Betty", "Zendaya", "Spiderman Is Awesome", 37, false);
-
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-addBookToLibrary(book3);
-
 // Displays the books added to the library
 const library = document.querySelector("#library");
 
 function updateLibrary(book) {
     const displayBookInfo = document.createElement("div");
+    displayBookInfo.setAttribute("id", "idBook" + counter)
     displayBookInfo.textContent = book.authorLastName 
         + ", "
         + book.authorFirstName
@@ -36,6 +29,13 @@ function updateLibrary(book) {
         + " - " 
         + book.pages
     library.appendChild(displayBookInfo);
+
+    const addDeleteButton = document.createElement("button");
+    addDeleteButton.setAttribute("id", "idDeleteButton" + counter);
+    addDeleteButton.textContent = "Delete";
+    library.appendChild(addDeleteButton);
+
+    counter++;
 }
 
 // Makes buttons work for adding new book
