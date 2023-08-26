@@ -2,12 +2,11 @@
 const myLibrary = [];
 
 // Book constructor
-function Book(authorFirstName, authorLastName, title, pages, read) {
+function Book(authorFirstName, authorLastName, title, pages) {
     this.authorFirstName = authorFirstName;
     this.authorLastName = authorLastName;
     this.title = title;
     this.pages = pages;
-    this.read = read;
 }
 
 // Adds book to library
@@ -36,8 +35,6 @@ function updateLibrary(book) {
         + book.title 
         + " - " 
         + book.pages
-        + " - "
-        + book.read;
     library.appendChild(displayBookInfo);
 }
 
@@ -57,18 +54,21 @@ submitNewBook.addEventListener("click", (event) => {
     const getFirstName = document.querySelector("#first-name-author");
     const getTitle = document.querySelector("#title");
     const getPages = document.querySelector("#pages");
-    const getRead = document.querySelector("#read");
 
     
     const newLastName = getLastName.value;
     const newFirstName = getFirstName.value;
     const newTitle = getTitle.value;
     const newPages = getPages.value;
-    const newRead = getRead.value;
 
-    const newBook = new Book(newFirstName, newLastName, newTitle, newPages, newRead);
+    const newBook = new Book(newFirstName, newLastName, newTitle, newPages);
     addBookToLibrary(newBook);
     updateLibrary(newBook);
+
+    getLastName.value = "";
+    getFirstName.value = "";
+    getTitle.value = "";
+    getPages.value = "";
 
     interactWithAddNewBookModal.close();
 })
