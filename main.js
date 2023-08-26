@@ -72,3 +72,10 @@ submitNewBook.addEventListener("click", (event) => {
 
     interactWithAddNewBookModal.close();
 })
+
+// Makes "CANCEL" button work
+const closeAddNewBookModal = document.querySelector("#cancel")
+
+closeAddNewBookModal.addEventListener("click", () => {
+    interactWithAddNewBookModal.close();
+})
