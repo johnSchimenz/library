@@ -42,7 +42,7 @@ function updateLibrary(book) {
 
     // Display "read" button
     const addReadButton = document.createElement("button");
-    addReadButton.setAttribute("id", "idReadButton" + counter);
+    addReadButton.setAttribute("id", "idReadButton-" + counter);
     addReadButton.setAttribute("class", "read-or-unread");
     addReadButton.setAttribute("onclick", "toggleReadUnread(this)");
     addReadButton.textContent = "Unread";
@@ -119,3 +119,19 @@ function removeBook(btn) {
     bookContainerToDelete.remove();
 }
 
+// Toggles "Read/Unread" button
+function toggleReadUnread(btn) {
+    const changeText = document.querySelector(btn.this);
+    if (btn.textContent === "Unread") {
+        btn.textContent = "Read";
+    } else if (btn.textContent === "Read") {
+        btn.textContent === "Unread";
+    }
+
+
+
+    // Change text to "Read"
+    // Change object propert to "true" for read
+
+    // Vice-versa to go from "Read" to "Unread"
+}
