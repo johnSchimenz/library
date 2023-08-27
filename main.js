@@ -8,6 +8,7 @@ function Book(authorFirstName, authorLastName, title, pages) {
     this.authorLastName = authorLastName;
     this.title = title;
     this.pages = pages;
+    this.read = false;
 }
 
 // Adds book to library
@@ -39,13 +40,21 @@ function updateLibrary(book) {
         + book.pages
     createBookContainer.appendChild(displayBookInfo);
 
+    // Display "read" button
+    const addReadButton = document.createElement("button");
+    addReadButton.setAttribute("id", "idReadButton" + counter);
+    addReadButton.setAttribute("class", "read-or-unread");
+    addReadButton.setAttribute("onclick", "toggleReadUnread(this)");
+    addReadButton.textContent = "Unread";
+    createBookContainer.appendChild(addReadButton);
+
     // Display delete button
     const addDeleteButton = document.createElement("button");
     addDeleteButton.setAttribute("id", "idDeleteButton-" + counter);
     addDeleteButton.setAttribute("class", "delete");
     addDeleteButton.setAttribute("onclick", "removeBook(this)");
     addDeleteButton.textContent = "DELETE";
-    displayBookInfo.appendChild(addDeleteButton);
+    createBookContainer.appendChild(addDeleteButton);
 
     counter++;
 }
