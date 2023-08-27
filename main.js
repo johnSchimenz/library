@@ -34,7 +34,7 @@ function updateLibrary(book) {
     addDeleteButton.setAttribute("id", "idDeleteButton" + counter);
     addDeleteButton.setAttribute("class", "delete");
     addDeleteButton.textContent = "DELETE";
-    library.appendChild(addDeleteButton);
+    displayBookInfo.appendChild(addDeleteButton);
 
     counter++;
 }
