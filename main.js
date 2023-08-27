@@ -100,9 +100,13 @@ function removeBook(btn) {
     const separatedDigit = clickedButtonId.split("-");
     const digitButtonId = separatedDigit[1];
 
-    // Add digit off end of button's id to construct book's id
+    // Add digit off end of button's id to construct book container's id
+    const bookContainerId = "#idBookContainer" + digitButtonId;
 
-    const bookId = "idBook" + digitButtonId;
-    console.log(bookId);
+    // Find id of container for book that we want to delete
+    const bookContainerToDelete = document.querySelector(bookContainerId);
+
+    // Delete the book
+    bookContainerToDelete.remove();
 }
 
