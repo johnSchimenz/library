@@ -41,7 +41,7 @@ function updateLibrary(book) {
 
     // Display delete button
     const addDeleteButton = document.createElement("button");
-    addDeleteButton.setAttribute("id", "idDeleteButton" + counter);
+    addDeleteButton.setAttribute("id", "idDeleteButton-" + counter);
     addDeleteButton.setAttribute("class", "delete");
     addDeleteButton.setAttribute("onclick", "removeBook(this)");
     addDeleteButton.textContent = "DELETE";
@@ -94,6 +94,12 @@ closeAddNewBookModal.addEventListener("click", () => {
 // Makes "DELETE" buttons work
 function removeBook(btn) {
     // Find id of DELETE button
-    alert(btn.id);
+    const clickedButtonId = btn.id;
+    
+    // Get the digit off end of the button's id
+    const separatedDigit = clickedButtonId.split("-");
+    const digitButtonId = separatedDigit[1];
+    console.log(digitButtonId);
+
 }
 
