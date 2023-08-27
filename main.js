@@ -99,7 +99,10 @@ function removeBook(btn) {
     // Get the digit off end of the button's id
     const separatedDigit = clickedButtonId.split("-");
     const digitButtonId = separatedDigit[1];
-    console.log(digitButtonId);
 
+    // Add digit off end of button's id to construct book's id
+
+    const bookId = "idBook" + digitButtonId;
+    console.log(bookId);
 }
 
