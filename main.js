@@ -38,13 +38,15 @@ function updateLibrary(book) {
         + book.title 
         + " - " 
         + book.pages
+        + " - "
+        + book.read;
     createBookContainer.appendChild(displayBookInfo);
 
     // Display "read" button
     const addReadButton = document.createElement("button");
     addReadButton.setAttribute("id", "idReadButton-" + counter);
-    addReadButton.setAttribute("class", "read-or-unread");
-    addReadButton.setAttribute("onclick", "toggleReadUnread(this)");
+    addReadButton.setAttribute("class", "unread");
+    addReadButton.setAttribute("onclick", "changeUnreadToRead(this)");
     addReadButton.textContent = "Unread";
     createBookContainer.appendChild(addReadButton);
 
@@ -119,19 +121,29 @@ function removeBook(btn) {
     bookContainerToDelete.remove();
 }
 
-// Toggles "Read/Unread" button
-function toggleReadUnread(btn) {
-    const changeText = document.querySelector(btn.this);
-    if (btn.textContent === "Unread") {
-        btn.textContent = "Read";
-    } else if (btn.textContent === "Read") {
-        btn.textContent === "Unread";
-    }
+// Toggles "Read/Unread" button, but can't change it back to "Unread", nor does it change the actual object.read to "true"
+function changeUnreadToRead(btn) {
+    btn.textContent = "Read";
+}
 
+
+
+
+/*
+const buttonsReadUnread = document.querySelectorAll("#button.idReadButton-" + counter);
+buttonsReadUnread.addEventListener("click", () => {
+    if (buttonsReadUnread.textContent === "Unread") {
+        buttonsReadUnread.textContent = "Read";
+        console.log("forward");
+    } else if (buttonsReadUnread.textContent === "Read") {
+        buttonsReadUnread.textContent = "Unread";
+        console.log("backward");
+    }
+})
+*/
 
 
     // Change text to "Read"
     // Change object propert to "true" for read
 
     // Vice-versa to go from "Read" to "Unread"
-}
