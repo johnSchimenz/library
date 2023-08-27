@@ -19,8 +19,17 @@ function addBookToLibrary(book) {
 const library = document.querySelector("#library");
 
 function updateLibrary(book) {
+
+    // Create book container
+    const createBookContainer = document.createElement("div");
+    createBookContainer.setAttribute("id", "idBookContainer" + counter);
+    createBookContainer.classList.add("book-container");
+    library.appendChild(createBookContainer);
+    
+    // Display book
     const displayBookInfo = document.createElement("div");
-    displayBookInfo.setAttribute("id", "idBook" + counter)
+    displayBookInfo.setAttribute("id", "idBook" + counter);
+    displayBookInfo.classList.add("book");
     displayBookInfo.textContent = book.authorLastName 
         + ", "
         + book.authorFirstName
@@ -28,11 +37,13 @@ function updateLibrary(book) {
         + book.title 
         + " - " 
         + book.pages
-    library.appendChild(displayBookInfo);
+    createBookContainer.appendChild(displayBookInfo);
 
+    // Display delete button
     const addDeleteButton = document.createElement("button");
     addDeleteButton.setAttribute("id", "idDeleteButton" + counter);
     addDeleteButton.setAttribute("class", "delete");
+    addDeleteButton.setAttribute("onclick", "removeBook(this)");
     addDeleteButton.textContent = "DELETE";
     displayBookInfo.appendChild(addDeleteButton);
 
@@ -80,12 +91,9 @@ closeAddNewBookModal.addEventListener("click", () => {
     interactWithAddNewBookModal.close();
 })
 
-// Makes "DELETE" button work (see VIDEO https://youtu.be/vkqZC_rEkVA?si=Qz6_gk7e4w9SE6gR&t=419 for help)
-const libraryBooksList = document.querySelector("#library"); // Selects the entire library div
-function deleteBook(event) {
-    const btn = event.target;
-    btn.closest("")
+// Makes "DELETE" buttons work
+function removeBook(btn) {
+    // Find id of DELETE button
+    alert(btn.id);
 }
 
-
-libraryBooksList.addEventListener("click", deleteBook)
