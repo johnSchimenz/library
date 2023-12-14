@@ -46,7 +46,7 @@ function updateLibrary(book) {
     const addReadButton = document.createElement("button");
     addReadButton.setAttribute("id", "idReadButton-" + counter);
     addReadButton.setAttribute("class", "unread");
-    addReadButton.setAttribute("onclick", "changeUnreadToRead(this)");
+    addReadButton.setAttribute("onclick", "toggleUnreadRead(this)");
     addReadButton.textContent = "Unread";
     createBookContainer.appendChild(addReadButton);
 
@@ -95,7 +95,7 @@ submitNewBook.addEventListener("click", (event) => {
     interactWithAddNewBookModal.close();
 })
 
-// Makes "CANCEL" button work
+// Makes "CANCEL" button work when creating a book
 const closeAddNewBookModal = document.querySelector("#cancel")
 
 closeAddNewBookModal.addEventListener("click", () => {
@@ -122,8 +122,14 @@ function removeBook(btn) {
 }
 
 // Toggles "Read/Unread" button, but can't change it back to "Unread", nor does it change the actual object.read to "true"
-function changeUnreadToRead(btn) {
-    btn.textContent = "Read";
+function toggleUnreadRead(btn) {
+    if (btn.textContent === "Unread") {
+        btn.textContent = "Read";
+    } else if (btn.textContent === "Read") {
+        btn.textContent = "Unread";
+    } else {
+        alert("Toggling Read-Unread error");
+    }
 }
 
 
