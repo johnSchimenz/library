@@ -121,14 +121,13 @@ function removeBook(btn) {
     bookContainerToDelete.remove();
 }
 
-// Toggles "Read/Unread" button, but can't change it back to "Unread", nor does it change the actual object.read to "true"
+// Toggles "Read/Unread" button, but it does not change the actual object.read to "true" or "false"
 function toggleUnreadRead(btn) {
     if (btn.textContent === "Unread") {
         btn.textContent = "Read";
-    } else if (btn.textContent === "Read") {
+    }
+    else if (btn.textContent === "Read") {
         btn.textContent = "Unread";
-    } else {
-        alert("Toggling Read-Unread error");
     }
 }
 
