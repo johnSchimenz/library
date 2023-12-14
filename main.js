@@ -8,7 +8,6 @@ function Book(authorFirstName, authorLastName, title, pages) {
     this.authorLastName = authorLastName;
     this.title = title;
     this.pages = pages;
-    this.read = false;
 }
 
 // Adds book to library
@@ -38,8 +37,6 @@ function updateLibrary(book) {
         + book.title 
         + " - " 
         + book.pages
-        + " - "
-        + book.read;
     createBookContainer.appendChild(displayBookInfo);
 
     // Display "read" button
@@ -129,6 +126,7 @@ function toggleUnreadRead(btn) {
     else if (btn.textContent === "Read") {
         btn.textContent = "Unread";
     }
+    updateLibrary()
 }
 
 
