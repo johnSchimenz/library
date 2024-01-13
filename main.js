@@ -75,10 +75,16 @@ submitNewBook.addEventListener("click", (event) => {
     const getTitle = document.querySelector("#title");
     const getPages = document.querySelector("#pages");
 
-    const newLastName = getLastName.value;
-    const newFirstName = getFirstName.value;
-    const newTitle = getTitle.value;
-    const newPages = getPages.value;
+    const newLastName = getLastName.value.trim();
+    const newFirstName = getFirstName.value.trim();
+    const newTitle = getTitle.value.trim();
+    const newPages = getPages.value.trim();
+
+    // Check to make sure that title and pages are not empty
+    if (newTitle === '' || newPages === '') {
+        alert('Please include a Title and Number of Pages.');
+        return;
+    }
 
     const newBook = new Book(newFirstName, newLastName, newTitle, newPages);
     addBookToLibrary(newBook);
