@@ -128,25 +128,3 @@ function toggleUnreadRead(btn) {
     }
     updateLibrary()
 }
-
-
-
-
-/*
-const buttonsReadUnread = document.querySelectorAll("#button.idReadButton-" + counter);
-buttonsReadUnread.addEventListener("click", () => {
-    if (buttonsReadUnread.textContent === "Unread") {
-        buttonsReadUnread.textContent = "Read";
-        console.log("forward");
-    } else if (buttonsReadUnread.textContent === "Read") {
-        buttonsReadUnread.textContent = "Unread";
-        console.log("backward");
-    }
-})
-*/
-
-
-    // Change text to "Read"
-    // Change object propert to "true" for read
-
-    // Vice-versa to go from "Read" to "Unread"
